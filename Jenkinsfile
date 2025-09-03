@@ -16,7 +16,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo "Cloning repository..."
-                git branch: 'jenkinsAssignment', url: 'https://git-training.nagarro.com/nagarro_fresher_training/automation-manual-qa/rahul-3218404.git'
+                git branch:'main', url: 'https://github.com/xasdewq/jenkins.git'
             }
         }
         
