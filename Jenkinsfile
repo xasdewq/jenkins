@@ -8,8 +8,7 @@ pipeline {
     }
     
     triggers {
-        // For demo, polling every 5 minutes. Replace with webhook as needed.
-        pollSCM('H/5 * * * *')
+        githubpush()
     }
     
     stages {
@@ -22,20 +21,19 @@ pipeline {
         
         stage('Build') {
             steps {
-                sh 'mvn clean install'
+                bat 'mvn clean install'
             }
         }
         
         stage('Test') {
             steps {
-                sh 'mvn test'
+                 bat 'mvn test'
             }
         }
         
         stage('Deploy') {
             steps {
                 echo 'Deploying application...'
-                // Add your deployment scripts/commands here
             }
         }
         
